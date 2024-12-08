@@ -1,24 +1,8 @@
 import "./cart.css"
 import { Link } from "react-router-dom"
 import Items from "./items";
+import { data } from "../../data.js";
 export default function Cart(){
-     const data = [
-        {
-            name: 'Смартфон XYZ',
-            price: '999'
-        },
-        {
-            name: 'Ноутбук ABC',
-            price: '1999'
-        },
-        {
-            name: 'Беспроводные наушники DEF',
-            price: '99'
-        }
-    ]
-        
-        
-    
     return(
                 <>
                 <header>

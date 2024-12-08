@@ -1,5 +1,8 @@
 import './styles.css';
 import { Link } from 'react-router-dom';
+import { data } from "../../data.js";
+import Catalog from './items.jsx';
+
 export default function Main() {
     return (
         <div>
@@ -21,29 +24,13 @@ export default function Main() {
                 </div>
             </header>
 
-            <main>
-                <section className="catalog">
-                    <h2>Каталог товаров</h2>
-                    <div className="product">
-                        <img src="smartphone.jpg" alt="Смартфон" />
-                        <h3>Смартфон XYZ</h3>
-                        <p>Цена: 120 000 тг</p>
-                        <button onClick={() => alert('Товар добавлен в корзину')}>Купить</button>
-                    </div>
-                    <div className="product">
-                        <img src="laptop.jpg" alt="Ноутбук" />
-                        <h3>Ноутбук ABC</h3>
-                        <p>Цена: 300 000 тг</p>
-                        <button onClick={() => alert('Товар добавлен в корзину')}>Купить</button>
-                    </div>
-                    <div className="product">
-                        <img src="headphones.jpg" alt="Наушники" />
-                        <h3>Беспроводные наушники</h3>
-                        <p>Цена: 45 000 тг</p>
-                        <button onClick={() => alert('Товар добавлен в корзину')}>Купить</button>
-                    </div>
-                </section>
-            </main>
+            <h2>Каталог товаров</h2>
+
+            <div className="catalog">
+                {data.map((item) => (
+                    <Catalog key={item.name} {...item} />
+                ))}
+            </div>
         </div>
     );
 }
